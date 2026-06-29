@@ -13,7 +13,7 @@ const icon = document.getElementById("lockIcon");
 const title = document.getElementById("lockTitle");
 const description = document.getElementById("lockDescription");
 
-const PASSWORD = "felizpumpe";
+const PASSWORD = "29-06-2023";
 
 /* ==========================================
    ABRIR MODAL
