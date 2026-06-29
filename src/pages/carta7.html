@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Canción 7</title>
+
+    <link rel="stylesheet" href="../css/player.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="player">
+
+    <!-- Volver -->
+
+    <a href="../../index.html" class="back-button">
+
+        ← Volver a la playlist
+
+    </a>
+
+    <!-- Portada -->
+
+    <img
+        src="../../assets/images/Album7.jpg"
+        alt="Portada de Amigo Imaginario"
+        class="album-cover"
+    >
+
+    <!-- Información -->
+
+    <section class="song-info">
+
+        <h1>Canción 7</h1>
+
+        <h2>Amigo Imaginario</h2>
+
+        <p>Vomité un conejito</p>
+
+    </section>
+
+    <!-- Reproductor -->
+
+    <section class="player-controls">
+
+        <div class="time">
+
+            <span id="currentTime">0:00</span>
+
+            <span id="duration">2:20</span>
+
+        </div>
+
+        <input
+            type="range"
+            id="progress"
+            value="0"
+            min="0"
+            max="100"
+        >
+
+        <button
+            id="playMusic"
+            class="play-button">
+
+            ▶
+
+        </button>
+
+        <audio id="music">
+
+            <source
+                src="../../assets/music/Amigo imaginario - Release.mp3"
+                type="audio/mpeg">
+
+            Tu navegador no soporta audio HTML5.
+
+        </audio>
+
+    </section>
+
+    <!-- Zona interactiva -->
+
+    <section class="interactive-area">
+
+        <!--
+            Aquí construiremos la interacción
+            de esta canción.
+        -->
+
+    </section>
+
+    <!-- Navegación -->
+
+    <div class="navigation-buttons">
+
+        <a href="carta6.html" class="nav-button">
+
+            ← Restart
+
+        </a>
+
+        <a href="../../index.html" class="nav-button">
+
+            Playlist
+
+        </a>
+
+        <a href="carta8.html" class="nav-button">
+
+            Luna →
+
+        </a>
+
+    </div>
+
+</main>
+
+<!-- Tema -->
+
+<script src="../js/theme.js"></script>
+
+<script>
+
+setTheme({
+
+    "bg-top":"#DE8FEF",
+
+    "bg-middle":"#C98ADB",
+
+    "bg-bottom":"#8C4A99",
+
+    "text":"#FFFFFF",
+
+    "subtext":"#F8EFFF",
+
+    "accent":"#007A48",
+
+    "button":"#FFFFFF",
+
+    "button-text":"#000000",
+
+    "card":"rgba(0,0,0,.18)",
+
+    "card-hover":"rgba(0,0,0,.28)",
+
+    "navigation":"rgba(255,255,255,.18)",
+
+    "navigation-hover":"rgba(255,255,255,.30)",
+
+    "paper-opacity":"0.30",
+
+    "paper-contrast":"1.15"
+
+});
+</script>
+
+<!-- Reproductor -->
+
+<script src="../js/player.js"></script>
+
+</body>
+</html>

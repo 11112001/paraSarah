@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Canción 8</title>
+
+    <link rel="stylesheet" href="../css/player.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="player">
+
+    <a href="../../index.html" class="back-button">
+
+        ← Volver a la playlist
+
+    </a>
+
+    <img
+        src="../../assets/images/Album8.jpg"
+        alt="Portada de Luna"
+        class="album-cover"
+    >
+
+    <section class="song-info">
+
+        <h1>Canción 8</h1>
+
+        <h2>Luna</h2>
+
+        <p>Te vi en un planetario</p>
+
+    </section>
+
+    <section class="player-controls">
+
+        <div class="time">
+
+            <span id="currentTime">0:00</span>
+
+            <span id="duration">2:24</span>
+
+        </div>
+
+        <input
+            type="range"
+            id="progress"
+            value="0"
+            min="0"
+            max="100"
+        >
+
+        <button
+            id="playMusic"
+            class="play-button">
+
+            ▶
+
+        </button>
+
+        <audio id="music">
+
+            <source
+                src="../../assets/music/Cancion8.mp3"
+                type="audio/mpeg">
+
+            Tu navegador no soporta audio HTML5.
+
+        </audio>
+
+    </section>
+
+    <section class="interactive-area">
+
+        <!-- Próximamente -->
+
+    </section>
+
+    <div class="navigation-buttons">
+
+        <a href="carta7.html" class="nav-button">
+
+            ← amigo imaginario
+
+        </a>
+
+        <a href="../../index.html" class="nav-button">
+
+            Playlist
+
+        </a>
+
+        <a href="carta9.html" class="nav-button">
+
+            Dulces corazones →
+
+        </a>
+
+    </div>
+
+</main>
+
+<script src="../js/theme.js"></script>
+
+<script>
+
+setTheme({
+
+    "bg-top":"#6F5AA8",
+
+    "bg-middle":"#2E274F",
+
+    "bg-bottom":"#11131D",
+
+    "text":"#F8F9FF",
+
+    "subtext":"#D6D4F2",
+
+    "accent":"#6AB8FF",
+
+    "button":"#F8F9FF",
+
+    "button-text":"#11131D",
+
+    "card":"rgba(34,35,61,.55)",
+
+    "card-hover":"rgba(55,56,91,.78)",
+
+    "navigation":"rgba(248,249,255,.10)",
+
+    "navigation-hover":"rgba(248,249,255,.22)",
+
+    "paper-opacity":"0",
+
+    "paper-contrast":"1"
+
+});
+
+</script>
+
+<script src="../js/player.js"></script>
+
+</body>
+</html>

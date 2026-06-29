@@ -1,0 +1,549 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat', sans-serif;
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        180deg,
+        #5b7eb8 0%,
+        #3b5f92 35%,
+        #121212 100%
+    );
+
+    color:white;
+}
+
+.app{
+    padding-bottom:110px;
+}
+
+/* ==========================
+   TOP BAR
+========================== */
+
+.top-bar{
+    padding:20px;
+
+    text-align:center;
+}
+
+.playlist-label{
+    font-size:.75rem;
+    letter-spacing:3px;
+
+    color:rgba(255,255,255,.7);
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+.playlist-header{
+    position:relative;
+
+    text-align:center;
+
+    padding:10px 20px 40px;
+}
+
+.cover-glow{
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#89a8da;
+
+    filter:blur(120px);
+
+    opacity:.18;
+
+    pointer-events:none;
+}
+
+.playlist-cover{
+    width:280px;
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+    position:relative;
+    z-index:2;
+}
+
+.playlist-header h1{
+    margin-top:25px;
+
+    font-size:2.6rem;
+    font-weight:800;
+}
+
+.playlist-description{
+    margin-top:12px;
+
+    max-width:500px;
+
+    margin-left:auto;
+    margin-right:auto;
+
+    color:#d7d7d7;
+
+    line-height:1.6;
+}
+
+.playlist-info{
+    margin-top:12px;
+
+    color:#bfbfbf;
+
+    font-size:.9rem;
+}
+
+.play-button{
+    margin-top:25px;
+
+    background:#1DB954;
+
+    color:white;
+
+    border:none;
+
+    border-radius:999px;
+
+    padding:15px 35px;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.play-button:hover{
+    transform:scale(1.05);
+}
+
+/* ==========================
+   SONG LIST
+========================== */
+
+.songs{
+    width:min(900px,95%);
+    margin:auto;
+}
+
+.song{
+    display:flex;
+    align-items:center;
+
+    gap:20px;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.25s;
+}
+
+.song:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.song-number{
+    width:25px;
+
+    color:#c7c7c7;
+}
+
+.song-info{
+    flex:1;
+}
+
+.song-info h3{
+    font-size:1rem;
+    font-weight:600;
+}
+
+.song-info p{
+    margin-top:4px;
+
+    color:#bfbfbf;
+
+    font-size:.85rem;
+}
+
+.song-duration{
+    color:#bfbfbf;
+}
+
+/* ==========================
+   MINI PLAYER
+========================== */
+
+.mini-player{
+    position:fixed;
+
+    left:10px;
+    right:10px;
+    bottom:10px;
+
+    background:#181818;
+
+    border-radius:14px;
+
+    padding:10px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.mini-cover{
+    width:52px;
+    height:52px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+}
+
+.mini-player-info{
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.mini-player-info strong{
+    font-size:.95rem;
+}
+
+.mini-player-info span{
+    font-size:.8rem;
+
+    color:#bfbfbf;
+}
+
+.mini-player-button{
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px){
+
+    .playlist-cover{
+        width:240px;
+        height:240px;
+    }
+
+    .playlist-header h1{
+        font-size:2.2rem;
+    }
+
+}
+
+/* ==========================
+   CANCIÓN BLOQUEADA
+========================== */
+
+.locked-song{
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:
+        transform .25s,
+        background .25s;
+
+}
+
+.locked-song:hover{
+
+    background:rgba(255,255,255,.08);
+
+    transform:translateY(-2px);
+
+}
+
+.locked-song .song-number{
+
+    font-size:1.2rem;
+
+}
+
+.locked-song .song-info h3{
+
+    color:#ffffff;
+
+}
+
+.locked-song .song-info p{
+
+    color:#cfcfcf;
+
+}
+
+/* ==========================
+   MODAL
+========================== */
+
+.lock-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    backdrop-filter:blur(10px);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+
+    z-index:9999;
+
+}
+
+.lock-modal.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+/* ==========================
+   TARJETA
+========================== */
+
+.lock-card{
+
+    width:min(380px,90%);
+
+    background:#1b1b1b;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    text-align:center;
+
+    animation:pop .35s ease;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+}
+
+/* ==========================
+   ICONO
+========================== */
+
+.lock-icon{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================
+   TITULO
+========================== */
+
+.lock-card h2{
+
+    font-size:1.7rem;
+
+    margin-bottom:12px;
+
+}
+
+/* ==========================
+   DESCRIPCIÓN
+========================== */
+
+.lock-card p{
+
+    color:#cfcfcf;
+
+    line-height:1.6;
+
+    margin-bottom:22px;
+
+}
+
+/* ==========================
+   INPUT
+========================== */
+
+#secretCode{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:#2b2b2b;
+
+    color:white;
+
+    font-size:1rem;
+
+    transition:.25s;
+
+}
+
+#secretCode:focus{
+
+    background:#353535;
+
+    box-shadow:
+        0 0 0 2px #1DB954;
+
+}
+
+/* ==========================
+   ERROR
+========================== */
+
+#lockError{
+
+    min-height:22px;
+
+    margin-top:10px;
+
+    color:#ff5c5c;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================
+   BOTÓN
+========================== */
+
+#unlockButton{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#1DB954;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#unlockButton:hover{
+
+    transform:scale(1.03);
+
+    background:#23d761;
+
+}
+
+#unlockButton:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================
+   ANIMACIÓN
+========================== */
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px)
+            scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}

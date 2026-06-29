@@ -1,0 +1,255 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+
+    font-family:'Montserrat', sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #5b7eb8 0%,
+        #3b5f92 35%,
+        #121212 100%
+    );
+
+    color:white;
+
+    padding:30px 20px;
+}
+
+.letter-page{
+    width:min(750px, 100%);
+    margin:auto;
+
+    animation:fadeIn 1s ease;
+}
+
+/* ==========================
+   BOTÓN VOLVER
+========================== */
+
+.back-button{
+    display:inline-block;
+
+    margin-bottom:25px;
+
+    color:white;
+
+    text-decoration:none;
+
+    opacity:.8;
+
+    transition:.2s;
+}
+
+.back-button:hover{
+    opacity:1;
+}
+
+/* ==========================
+   PORTADA
+========================== */
+
+.album-cover{
+    width:100%;
+    max-width:320px;
+
+    display:block;
+
+    margin:auto;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+
+    animation:coverAppear 1.2s ease;
+}
+
+h1{
+    margin-top:25px;
+
+    text-align:center;
+
+    font-size:2.4rem;
+    font-weight:800;
+}
+
+.song-title{
+    text-align:center;
+
+    margin-top:8px;
+
+    color:#d7d7d7;
+
+    font-size:1rem;
+}
+
+/* ==========================
+   BOTÓN MÚSICA
+========================== */
+
+.music-button{
+    display:block;
+
+    margin:25px auto;
+
+    border:none;
+
+    background:#1DB954;
+
+    color:white;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    font-size:1rem;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.music-button:hover{
+    transform:scale(1.05);
+}
+
+/* ==========================
+   CARTA
+========================== */
+
+.letter-card{
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    line-height:1.9;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.letter-card h2{
+    margin-bottom:20px;
+
+    font-size:1.5rem;
+}
+
+.letter-card p{
+    margin-bottom:18px;
+
+    color:#f0f0f0;
+}
+
+/* ==========================
+   NAVEGACIÓN
+========================== */
+
+.navigation-buttons{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.nav-button{
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    transition:.25s;
+}
+
+.nav-button:hover{
+    background:rgba(255,255,255,.15);
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes coverAppear{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+/* ==========================
+   MÓVIL
+========================== */
+
+@media (max-width:768px){
+
+    body{
+        padding:20px 15px;
+    }
+
+    .album-cover{
+        max-width:260px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    .letter-card{
+        padding:25px;
+    }
+
+    .navigation-buttons{
+        flex-direction:column;
+    }
+
+}

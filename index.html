@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sarah</title>
+
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <script src="src/js/lock.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="app">
+
+        <!-- Barra superior -->
+        <header class="top-bar">
+            <span class="playlist-label">ESPOTIFAI</span>
+        </header>
+
+        <!-- Cabecera -->
+        <section class="playlist-header">
+
+            <div class="cover-glow"></div>
+
+            <img
+                src="assets/images/Sarah.jpg"
+                alt="Sarah"
+                class="playlist-cover"
+            >
+
+            <h1>Feliz Pumpe</h1>
+
+            <p class="playlist-description">
+                I know how much you love music, so I made this for you, as a gift.
+            </p>
+
+            <p class="playlist-info">
+                Creada por Yeo • 10 canciones • 34 min 23 s
+            </p>
+
+            <button class="play-button">
+                ▶ Reproducir
+            </button>
+
+        </section>
+
+        <!-- Lista de canciones -->
+        <section class="songs">
+
+            <!-- Canción 1 -->
+            <a href="src/pages/carta1.html" class="song">
+                <span class="song-number">1</span>
+
+                <div class="song-info">
+                    <h3>Intro.</h3>
+                    <p>Mia &amp; Sebastian's Theme</p>
+                </div>
+
+                <span class="song-duration">1:34</span>
+            </a>
+
+            <!-- Canción 2 -->
+            <a href="src/pages/carta2.html" class="song">
+                <span class="song-number">2</span>
+
+                <div class="song-info">
+                    <h3>Canción 2</h3>
+                    <p>Endlessly — Muse</p>
+                </div>
+
+                <span class="song-duration">3:48</span>
+            </a>
+
+            <!-- Canción 3 -->
+            <a href="src/pages/carta3.html" class="song">
+                <span class="song-number">3</span>
+
+                <div class="song-info">
+                    <h3>Canción 3</h3>
+                    <p>Sin poderte hablar — Willie Colón</p>
+                </div>
+
+                <span class="song-duration">5:24</span>
+            </a>
+
+            <!-- Canción 4 -->
+            <a href="src/pages/carta4.html" class="song">
+                <span class="song-number">4</span>
+
+                <div class="song-info">
+                    <h3>Canción 4</h3>
+                    <p>ALONE, PART 3 — XXXTENTACION</p>
+                </div>
+
+                <span class="song-duration">1:50</span>
+            </a>
+
+            <!-- Canción 5 -->
+            <a href="src/pages/carta5.html" class="song">
+                <span class="song-number">5</span>
+
+                <div class="song-info">
+                    <h3>Canción 5</h3>
+                    <p>Hustler Musik — Lil Wayne</p>
+                </div>
+
+                <span class="song-duration">5:03</span>
+            </a>
+
+            <!-- Canción 6 -->
+            <a href="src/pages/carta6.html" class="song">
+                <span class="song-number">6</span>
+
+                <div class="song-info">
+                    <h3>Canción 6</h3>
+                    <p>&lt;restart&gt; — Oscar Lang</p>
+                </div>
+
+                <span class="song-duration">3:56</span>
+            </a>
+
+            <!-- Canción 7 -->
+            <a href="src/pages/carta7.html" class="song">
+                <span class="song-number">7</span>
+
+                <div class="song-info">
+                    <h3>Canción 7</h3>
+                    <p>Amigo Imaginario — Vomité un conejito</p>
+                </div>
+
+                <span class="song-duration">2:20</span>
+            </a>
+
+            <!-- Canción 8 -->
+            <a href="src/pages/carta8.html" class="song">
+                <span class="song-number">8</span>
+
+                <div class="song-info">
+                    <h3>Canción 8</h3>
+                    <p>Luna — Te vi en un planetario</p>
+                </div>
+
+                <span class="song-duration">2:24</span>
+            </a>
+
+            <!-- Canción 9 -->
+            <a href="src/pages/carta9.html" class="song">
+                <span class="song-number">9</span>
+
+                <div class="song-info">
+                    <h3>Canción 9</h3>
+                    <p>Dulces Corazones — Anttonias</p>
+                </div>
+
+                <span class="song-duration">5:07</span>
+            </a>
+
+            <!-- Canción 10 (Bloqueada) -->
+            <a href="#" id="lockedSong" data-target="src/pages/carta10.html" class="song locked-song">
+
+                <span class="song-number">🔒</span>
+
+                <div class="song-info">
+                    <h3>Tema bloqueado por el desarrollador</h3>
+                    <p>Introduce el código para desbloquear esta canción.</p>
+                </div>
+
+                <span class="song-duration">2:57</span>
+
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         MODAL DE DESBLOQUEO
+    ========================================== -->
+
+    <div id="lockModal" class="lock-modal">
+
+        <div class="lock-card">
+
+            <div class="lock-icon">
+                🔒
+            </div>
+
+            <h2>
+                Última canción
+            </h2>
+
+            <p>
+                Esta función no sirve, no me voy a matar la cabeza arreglando<br>
+                Porfa pon el código desde la novena canción pls psl pls pls
+                
+            </p>
+
+            <input
+                type="password"
+                id="secretCode"
+                placeholder="Código"
+                autocomplete="off"
+            >
+
+            <p id="lockError"></p>
+
+            <button id="unlockButton">
+                Desbloquear
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

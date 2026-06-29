@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canción 5</title>
+
+    <link rel="stylesheet" href="../css/carta.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="letter-page">
+
+        <a href="../../index.html" class="back-button">
+            ← Volver a la playlist
+        </a>
+
+        <img
+            src="../../assets/images/Album10.jpg"
+            alt="Portada Canción 5"
+            class="album-cover"
+        >
+
+        <h1>Last words</h1>
+
+        <p class="song-title">
+            Me olvidarás (como lo haces ya) - Incluso si no despiertas
+        </p>
+
+        <button id="playMusic" class="music-button">
+            ▶ Escuchar tema
+        </button>
+
+        <audio id="music">
+            <source
+                src="../../assets/music/me olvidarás (como lo haces ya) - incluso si nunca despiertas.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <div class="letter-card">
+
+            <h2>Por si no te vuelvo a ver</h2>
+
+            <p>
+                Todo esto no debí hacerlo
+            </p>
+
+            <p>
+                Nadie me obligó, aquellos regalos que te he dado, ya sea una flor,
+                un libro, un pin, ocurren porque veo aquello y pienso que te podrían gustar.
+            </p>
+
+            <p>
+                A pesar que no te pueda dar más flores, me gustaría que tuvieras esto, 
+                no fue el primer regalo, tampoco será el último. Pero por ahora, es lo más 
+                que te puedo dar.
+            </p>
+
+            <p>
+                Si algún día te sientes sola, recuerda que siempre habrá alguién a 1255 km esperando,
+                Si te sientes odiada, recuerda que siempre habrá alguien cuyo pensamiento inundara su mente 
+                al momento de ver attack on titan, escuchar a Billie Eilish o simplemente algo tan sutil 
+                como ver a dos personas jugar guitar hero.
+            </p>
+
+            <p>
+
+                I should have hugged you tighter if I had known it was the last time I would see you.
+
+            </p>
+
+        </div>
+
+        <div class="navigation-buttons">
+
+            <a href="carta9.html" class="nav-button">
+                ← Dulces corazones
+            </a>
+
+            <a href="../../index.html" class="nav-button">
+                Playlist
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        const button = document.getElementById("playMusic");
+        const audio = document.getElementById("music");
+
+        button.addEventListener("click", () => {
+
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "⏸ Pausar";
+            } else {
+                audio.pause();
+                button.textContent = "▶ Escuchar";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

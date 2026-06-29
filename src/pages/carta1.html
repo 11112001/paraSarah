@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canción 1</title>
+
+    <link rel="stylesheet" href="../css/carta.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="letter-page">
+
+        <a href="../../index.html" class="back-button">
+            ← Volver a la playlist
+        </a>
+
+        <img
+            src="../../assets/images/Album1.jpg"
+            alt="Album"
+            class="album-cover"
+        >
+
+        <h1>Intro</h1>
+
+        <p class="song-title">
+            Mia & Sebastian's Theme
+        </p>
+
+        <button id="playMusic" class="music-button">
+            ▶ Escuchar tema
+        </button>
+
+        <audio id="music">
+            <source
+                src="../../assets/music/MiaAndSebastiansTheme.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <div class="letter-card">
+
+            <h2>Enjoy</h2>
+
+            <p>
+                Hay días lentos y oscuros cuyas fechas se esperan no ser recordadas
+            </p>
+
+            <p>
+                Te hago esto porque no sabré cuando te pueda volver a dar algo.
+            </p>
+
+            <p>
+                El tiempo es lo más impredecible del mundo, es por eso que todo toca hacerlo bien.
+            </p>
+
+            <p>
+                En esta página vas a tener cartas escritas por mí. Entiendo que no la estés pasando bien, espero estas cartas te ayuden un poco.
+            </p>
+
+        </div>
+
+        <a href="carta2.html" class="next-button">
+            Siguiente canción →
+        </a>
+
+    </main>
+
+    <script>
+        const button = document.getElementById("playMusic");
+        const audio = document.getElementById("music");
+
+        button.addEventListener("click", () => {
+
+            if(audio.paused){
+                audio.play();
+                button.textContent = "⏸ Pausar tema";
+            }else{
+                audio.pause();
+                button.textContent = "▶ Reaunidar tema";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

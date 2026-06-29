@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Canción 5</title>
+
+    <link rel="stylesheet" href="../css/player.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="player">
+
+    <!-- Volver -->
+
+    <a href="../../index.html" class="back-button">
+
+        ← Volver a la playlist
+
+    </a>
+
+    <!-- Portada -->
+
+    <img
+        src="../../assets/images/Album5.jpg"
+        alt="Portada del álbum"
+        class="album-cover"
+    >
+
+    <!-- Información -->
+
+    <section class="song-info">
+
+        <h1>Canción 5</h1>
+
+        <h2>
+            Hustler Musik 
+        </h2>
+
+        <p>
+            Lil Wayne
+        </p>
+
+    </section>
+
+    <!-- Reproductor -->
+
+    <section class="player-controls">
+
+        <div class="time">
+
+            <span id="currentTime">0:00</span>
+
+            <span id="duration">5:03</span>
+
+        </div>
+
+        <input
+            type="range"
+            id="progress"
+            value="0"
+            min="0"
+            max="100"
+        >
+
+        <button
+            id="playMusic"
+            class="play-button">
+
+            ▶
+
+        </button>
+
+        <audio id="music">
+
+            <source
+                src="../../assets/music/Hustler Musik - Lil Wayne.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+    </section>
+
+    <!-- Zona interactiva -->
+
+    <section class="interactive-area">
+
+        <!--
+            Aquí irán los botones, imágenes,
+            recuerdos o cualquier interacción
+            que quieras añadir.
+        -->
+
+    </section>
+
+    <!-- Navegación -->
+
+    <div class="navigation-buttons">
+
+        <a href="carta4.html" class="nav-button">
+
+            ← Alone PART III
+
+        </a>
+
+        <a href="../../index.html" class="nav-button">
+
+            Playlist
+
+        </a>
+
+        <a href="carta6.html" class="nav-button">
+
+            restart →
+
+        </a>
+
+    </div>
+
+</main>
+
+<!-- Tema -->
+
+<script src="../js/theme.js"></script>
+
+<script>
+
+setTheme({
+
+    "bg-top":"#D3D3D3",
+
+    "bg-middle":"#8A8A8A",
+
+    "bg-bottom":"#000000",
+
+    "text":"#FFFFFF",
+
+    "subtext":"#DADADA",
+
+    "accent":"#B31B1B",
+
+    "button":"#FFFFFF",
+
+    "button-text":"#000000",
+
+    "card":"rgba(35,35,35,.75)",
+
+    "card-hover":"rgba(55,55,55,.90)",
+
+    "navigation":"rgba(255,255,255,.08)",
+
+    "navigation-hover":"rgba(255,255,255,.16)"
+
+});
+
+</script>
+
+<!-- Reproductor -->
+
+<script src="../js/player.js"></script>
+
+</body>
+
+</html>

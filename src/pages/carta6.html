@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Canción 6</title>
+
+    <link rel="stylesheet" href="../css/player.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main class="player">
+
+    <!-- Volver -->
+
+    <a href="../../index.html" class="back-button">
+
+        ← Volver a la playlist
+
+    </a>
+
+    <!-- Portada -->
+
+    <img
+        src="../../assets/images/Album6.jpg"
+        alt="Portada de &lt;restart&gt;"
+        class="album-cover"
+    >
+
+    <!-- Información -->
+
+    <section class="song-info">
+
+        <h1>Canción 6</h1>
+
+        <h2>&lt;restart&gt;</h2>
+
+        <p>Oscar Lang</p>
+
+    </section>
+
+    <!-- Reproductor -->
+
+    <section class="player-controls">
+
+        <div class="time">
+
+            <span id="currentTime">0:00</span>
+
+            <span id="duration">3:56</span>
+
+        </div>
+
+        <input
+            type="range"
+            id="progress"
+            value="0"
+            min="0"
+            max="100"
+        >
+
+        <button
+            id="playMusic"
+            class="play-button">
+
+            ▶
+
+        </button>
+
+        <audio id="music">
+
+            <source
+                src="../../assets/music/restart - Oscar Lang.mp3"
+                type="audio/mpeg">
+
+            Tu navegador no soporta audio HTML5.
+
+        </audio>
+
+    </section>
+
+    <!-- Zona interactiva -->
+
+    <section class="interactive-area">
+
+        <!--
+            Aquí construiremos la interacción de esta canción.
+            Puede ser una galería, botones, recuerdos,
+            fotografías o cualquier otra idea.
+        -->
+
+    </section>
+
+    <!-- Navegación -->
+
+    <div class="navigation-buttons">
+
+        <a href="carta5.html" class="nav-button">
+
+            ← Hustler Musik
+
+        </a>
+
+        <a href="../../index.html" class="nav-button">
+
+            Playlist
+
+        </a>
+
+        <a href="carta7.html" class="nav-button">
+
+            Amigo Imaginario→
+
+        </a>
+
+    </div>
+
+</main>
+
+<!-- Tema -->
+
+<script src="../js/theme.js"></script>
+
+<script>
+
+setTheme({
+
+    "bg-top":"#E5C07B",
+
+    "bg-middle":"#CDB074",
+
+    "bg-bottom":"#4A2E1B",
+
+    "text":"#F4EFE3",
+
+    "subtext":"#E7DDC9",
+
+    "accent":"#1F1610",
+
+    "button":"#F4EFE3",
+
+    "button-text":"#1F1610",
+
+    "card":"rgba(74,46,27,.55)",
+
+    "card-hover":"rgba(74,46,27,.80)",
+
+    "navigation":"rgba(31,22,16,.35)",
+
+    "navigation-hover":"rgba(31,22,16,.55)"
+
+});
+
+</script>
+
+<!-- Reproductor -->
+
+<script src="../js/player.js"></script>
+
+</body>
+</html>

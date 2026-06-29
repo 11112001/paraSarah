@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canción 4</title>
+
+    <link rel="stylesheet" href="../css/carta.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="letter-page">
+
+        <a href="../../index.html" class="back-button">
+            ← Volver a la playlist
+        </a>
+
+        <img
+            src="../../assets/images/Album4.jpg"
+            alt="Portada Canción 4"
+            class="album-cover"
+        >
+
+        <h1>relax</h1>
+
+        <p class="song-title">
+            ALONE, PART 3 - XXXTENTACION
+        </p>
+
+        <button id="playMusic" class="music-button">
+            ▶ Escuchar a X
+        </button>
+
+        <audio id="music">
+            <source
+                src="../../assets/music/ALONE_PART3.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <div class="letter-card">
+
+            <h2>Just listen</h2>
+
+            <p>
+                Solo parchate y escucha este pedazo de tema
+            </p>
+
+            <p>
+                No te quiero hostigar más con cartas, entonces, las siguientes canciones
+                serán recomendaciones de temas que sé que no conoces, pero te pueden gustar
+            </p>
+
+            <p>
+                Disfruta tu regalo ma chére
+            </p>
+
+            <p>
+            </p>
+
+        </div>
+
+        <div class="navigation-buttons">
+
+            <a href="carta3.html" class="nav-button">
+                ← Sin poderte hablar
+            </a>
+
+            <a href="../../index.html" class="nav-button">
+                Playlist
+            </a>
+
+            <a href="carta5.html" class="nav-button">
+                Hustler Musik →
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        const button = document.getElementById("playMusic");
+        const audio = document.getElementById("music");
+
+        button.addEventListener("click", () => {
+
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "⏸ Pausar";
+            } else {
+                audio.pause();
+                button.textContent = "▶ Reanudar";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

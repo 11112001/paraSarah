@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canción 2</title>
+
+    <link rel="stylesheet" href="../css/carta.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="letter-page">
+
+        <a href="../../index.html" class="back-button">
+            ← Volver a la playlist
+        </a>
+
+        <img
+            src="../../assets/images/Album2.jpg"
+            alt="Portada Canción 2"
+            class="album-cover"
+        >
+
+        <h1>FELIZ CUMPLE <3333 </h1>
+
+        <p class="song-title">
+            Endlessly - Muse
+        </p>
+
+        <button id="playMusic" class="music-button">
+            ▶ Escuchar tema
+        </button>
+
+        <audio id="music">
+            <source
+                src="../../assets/music/Endlessly.mp3"
+                type="audio/mpeg">
+        </audio>
+
+        <div class="letter-card">
+
+            <h2>Para Sarah ❤️</h2>
+
+            <p>
+                FELIZ CUMPLE GONORREAAA
+            </p>
+
+            <p>
+                Ya son 20 años wn, llegaste al segundo piso jakdjkas
+                felicidades, en serio, has vivido tanto y aprendido tanto
+                que te sorprendería lo mucho que puedes cambiar de un cumpleaños al otro.
+
+            </p>
+
+            <p>
+                Recuerda que la vida es de aprendizaje, no te mandes para atrás cuando las cosas no te salgan.
+                Siempre va a haber una razón de que te pase lo que te pase, eso lo puedes tomar como una lección 
+
+
+            </p>
+
+            <p> 
+                Feliz pumpe :3
+            </p>
+
+        </div>
+
+        <div class="navigation-buttons">
+
+            <a href="carta1.html" class="nav-button">
+                ← MiaAndSebastiansTheme
+            </a>
+
+            <a href="../../index.html" class="nav-button">
+                Playlist
+            </a>
+
+            <a href="carta3.html" class="nav-button">
+                Sin poderte Hablar →
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+        const button = document.getElementById("playMusic");
+        const audio = document.getElementById("music");
+
+        button.addEventListener("click", () => {
+
+            if (audio.paused) {
+                audio.play();
+                button.textContent = "⏸ Pausar";
+            } else {
+                audio.pause();
+                button.textContent = "▶ Reanudar";
+            }
+
+        });
+    </script>
+
+</body>
+</html>

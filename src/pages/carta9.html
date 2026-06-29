@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Canción 9</title>
+
+    <link rel="stylesheet" href="../css/player.css">
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/lock.js" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"><body>
+
+<main class="player">
+
+    <!-- Volver -->
+    <a href="../../index.html" class="back-button">
+        ← Volver a la playlist
+    </a>
+
+    <!-- Portada -->
+
+    <img
+        src="../../assets/images/Album9.jpg"
+        alt="Portada del álbum"
+        class="album-cover"
+    >
+
+    <!-- Información -->
+
+    <section class="song-info">
+
+        <h1>Canción 9</h1>
+
+        <h2>
+            Dulces Corazones
+        </h2>
+
+        <p>
+            Anttonias
+        </p>
+
+    </section>
+
+    <!-- Reproductor -->
+
+    <section class="player-controls">
+
+        <div class="time">
+
+            <span id="currentTime">
+                0:00
+            </span>
+
+            <span id="duration">
+                5:07
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            id="progress"
+            value="0"
+            min="0"
+            max="100"
+        >
+
+        <button
+            id="playMusic"
+            class="play-button">
+
+            ▶
+
+        </button>
+
+        <audio id="music">
+
+            <source
+                src="../../assets/music/Anttonias - Dulces Corazones __ Letra - dormido.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+    </section>
+
+    <!-- Zona interactiva -->
+
+    <section class="interactive-area">
+
+        <!--
+            Aquí podrás poner:
+            - fotografías
+            - botones
+            - recuerdos
+            - mensajes
+            - enlaces
+            - lo que quieras
+        -->
+
+    </section>
+
+    <!-- Navegación -->
+
+    <div class="navigation-buttons">
+
+        <a href="carta8.html" class="nav-button">
+
+            ← Luna
+
+        </a>
+
+        <a href="../../index.html" class="nav-button">
+
+            Playlist
+
+        </a>
+
+        <a href="#" id="lockedSong" data-target="carta10.html" class="nav-button">
+            insert code →
+        </a>
+
+    </div>
+
+    <!-- ==========================================
+        MODAL CÓDIGO
+    ========================================== -->
+
+    <div id="lockModal" class="lock-modal">
+
+        <div class="lock-card">
+
+            <div id="lockIcon" class="lock-icon">
+                🔒
+            </div>
+
+            <h2 id="lockTitle">
+                Última canción
+            </h2>
+
+            <p id="lockDescription">
+                Esta pista está protegida.<br>
+                Introduce el código para continuar.
+            </p>
+
+            <input
+                type="password"
+                id="secretCode"
+                placeholder="Código"
+                autocomplete="off"
+            >
+
+            <p id="lockError"></p>
+
+            <button id="unlockButton">
+                Desbloquear
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+
+const button = document.getElementById("playMusic");
+const audio = document.getElementById("music");
+
+const progress = document.getElementById("progress");
+
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
+
+button.addEventListener("click",()=>{
+
+    if(audio.paused){
+
+        audio.play();
+        button.textContent="⏸";
+
+    }else{
+
+        audio.pause();
+        button.textContent="▶";
+
+    }
+
+});
+
+audio.addEventListener("loadedmetadata",()=>{
+
+    progress.max=audio.duration;
+    duration.textContent=format(audio.duration);
+
+});
+
+audio.addEventListener("timeupdate",()=>{
+
+    progress.value=audio.currentTime;
+    currentTime.textContent=format(audio.currentTime);
+
+});
+
+progress.addEventListener("input",()=>{
+
+    audio.currentTime=progress.value;
+
+});
+
+function format(time){
+
+    const min=Math.floor(time/60);
+    const sec=Math.floor(time%60);
+
+    return `${min}:${sec.toString().padStart(2,"0")}`;
+
+}
+
+/* ========= PALETA DEL ÁLBUM ========= */
+
+setTheme({
+
+    "bg-top":"#F7F2EE",
+    "bg-middle":"#E8D6D3",
+    "bg-bottom":"#8A1F33",
+
+    "text":"#FFFFFF",
+    "subtext":"#F4D9DD",
+
+    "accent":"#B11F3B",
+
+    "button":"#FFFFFF",
+    "button-text":"#8A1F33",
+
+    "card":"rgba(255,255,255,.12)",
+    "card-hover":"rgba(255,255,255,.22)",
+
+    "navigation":"rgba(255,255,255,.14)",
+    "navigation-hover":"rgba(255,255,255,.25)"
+
+});
+
+</script>
+
+<script src="../js/theme.js"></script>
+<script src="../js/lock.js"></script>
+
+</body>
+</html>
